@@ -1,0 +1,424 @@
+/* MANISHA THAPA PORTFOLIO - FINAL STYLES */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --primary-pink: #fbc2eb;
+  --deep-berry: #6c2d40;
+  --soft-cream: #f4f7f9;
+  --dark-text: #2d3436;
+  --white: #ffffff;
+  --smooth: all 0.4s ease-in-out;
+}
+
+body {
+  background: var(--soft-cream);
+  color: var(--dark-text);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* --- Typing Animation --- */
+.typing-container {
+  display: inline-block;
+}
+.typing-name {
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--deep-berry);
+  animation:
+    typing 3.5s steps(30, end) forwards,
+    blink 0.75s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--deep-berry);
+  }
+}
+
+/* --- Navigation & Hamburger Fixed --- */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.logo {
+  font-weight: 700;
+  color: var(--deep-berry);
+  font-size: 1.2rem;
+}
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark-text);
+  font-weight: 500;
+  transition: var(--smooth);
+}
+.nav-links a:hover {
+  color: var(--deep-berry);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+.bar {
+  width: 25px;
+  height: 3px;
+  background: var(--deep-berry);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* --- Hero Section --- */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8%;
+}
+.hero-container {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  align-items: center;
+  gap: 40px;
+}
+.hero-content-card {
+  flex: 1.2;
+  background: var(--white);
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+}
+.profile-badge {
+  width: 50px;
+  height: 50px;
+  background: #f0f2f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #636e72;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 5px;
+}
+.hero-subtitle {
+  color: #636e72;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 15px;
+}
+.btn-light {
+  background: #f0f2f5;
+  color: var(--dark-text);
+  padding: 12px 25px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--smooth);
+}
+.btn-dark {
+  background: var(--deep-berry);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--smooth);
+}
+
+/* --- Hero Animation Visual --- */
+.hero-visual {
+  flex: 0.8;
+  text-align: center;
+}
+.girl-circle {
+  width: 320px;
+  height: 320px;
+  background: #ebf2ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 5s ease-in-out infinite;
+  overflow: hidden;
+}
+.girl-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.animation-label {
+  margin-top: 15px;
+  color: #636e72;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* --- Professional Journey Grid --- */
+.cv-section {
+  padding: 80px 8%;
+  background-color: var(--white);
+}
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--deep-berry);
+}
+.cv-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+.job-card {
+  background: var(--soft-cream);
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  border-left: 6px solid var(--primary-pink);
+  transition: var(--smooth);
+}
+.job-card:hover {
+  transform: translateX(10px);
+  background: var(--white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.company {
+  font-weight: 700;
+  color: var(--deep-berry);
+  font-size: 1.1rem;
+}
+.job-meta {
+  font-size: 0.85rem;
+  color: #636e72;
+  margin: 10px 0;
+}
+.job-details {
+  margin-left: 20px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.skills-sidebar {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid #edf2f7;
+  position: sticky;
+  top: 120px;
+}
+.tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--white);
+  border: 1px solid var(--primary-pink);
+  border-radius: 20px;
+  margin: 5px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--deep-berry);
+  transition: var(--smooth);
+}
+.tag:hover {
+  background: var(--primary-pink);
+  color: var(--white);
+}
+
+/* --- Socials & Connect --- */
+.social-section {
+  padding: 80px 8%;
+  text-align: center;
+}
+.social-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+.social-pill {
+  padding: 12px 30px;
+  background: var(--white);
+  border-radius: 50px;
+  text-decoration: none;
+  color: var(--dark-text);
+  border: 1px solid var(--primary-pink);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--smooth);
+}
+.social-pill:hover {
+  background: var(--primary-pink);
+  transform: translateY(-5px);
+}
+
+/* --- Footer --- */
+.main-footer {
+  padding: 80px 8% 40px;
+  background: var(--white);
+  text-align: center;
+  border-top: 2px solid var(--primary-pink);
+}
+.cursive-footer {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.2rem;
+  color: var(--deep-berry);
+  margin-bottom: 10px;
+}
+.footer-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 40px;
+  background: var(--deep-berry);
+  color: white;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--smooth);
+}
+.footer-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+.footer-bottom {
+  margin-top: 50px;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+/* --- Background Emojis --- */
+.background-animation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+}
+.floating-items li {
+  position: absolute;
+  list-style: none;
+  font-size: 2rem;
+  bottom: -100px;
+  opacity: 0.1;
+  animation: floatUp 18s linear infinite;
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(-1100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* --- Mobile Device Friendly (Fixed Hamburger) --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero-container {
+    flex-direction: column-reverse;
+  }
+  .cv-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-content-card {
+    padding: 30px;
+    text-align: center;
+  }
+  .hero-btns {
+    justify-content: center;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .girl-circle {
+    width: 260px;
+    height: 260px;
+  }
+  .skills-sidebar {
+    position: static;
+    margin-top: 40px;
+  }
+
+  /* Hamburger "X" Effect */
+  .menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
